@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steven — Blog</title>
+    <meta name="description" content="Steven's personal blog: stories, friends and favorite memories." />
+    <meta name="theme-color" content="#0a0f1f" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <noscript><style>body.is-intro .site-header, body.is-intro .hero { opacity: 1; visibility: visible; }</style></noscript>
+</head>
+
+<body class="is-intro">
+    <a href="#main" class="skip">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#home" class="nav-logo">TYZEN.BLOG</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"
+                aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+            <nav class="nav-links" id="navLinks" aria-label="Main">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#friends">Friends</a>
+                <a href="#memories">Memories</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section id="home" class="hero-wrap">
+            <!-- v1: plays first, no loop. v2: takes over at 13s and loops forever -->
+            <video class="bg-video" id="bgV1" src="videos/v2.mp4" muted playsinline autoplay preload="auto"></video>
+            <video class="bg-video" id="bgV2" src="videos/vi1.mp4" muted playsinline loop preload="auto"></video>
+
+            <div class="hero container">
+                <div class="hero-text">
+                    <h1>Hi, I'm Steven. Welcome to my corner of the internet.</h1>
+                    <p class="intro">Stories, small adventures and the people who make them worth telling.</p>
+                    <a href="#about" class="btn-shape"><span>READ MY STORY</span></a>
+                </div>
+
+                <div class="hero-carousel" id="ring" aria-label="Photo ring. Drag to spin." tabindex="0">
+                    <div class="inner" id="ringInner" style="--quantity: 6;">
+                        <div class="card" style="--index: 0;"><img class="img" src="img/1.jpg" alt="Photo 1"
+                                draggable="false" /></div>
+                        <div class="card" style="--index: 1;"><img class="img" src="img/2.jpg" alt="Photo 2"
+                                draggable="false" /></div>
+                        <div class="card" style="--index: 2;"><img class="img" src="img/3.jpg" alt="Photo 3"
+                                draggable="false" /></div>
+                        <div class="card" style="--index: 3;"><img class="img" src="img/4.jpg" alt="Photo 4"
+                                draggable="false" /></div>
+                        <div class="card" style="--index: 4;"><img class="img" src="img/chess.jpg" alt="A chess game"
+                                draggable="false" /></div>
+                        <div class="card" style="--index: 5;"><img class="img" src="img/friend.jpg" alt="A friend"
+                                draggable="false" /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container section-pad">
+            <h2 class="section-title">About me</h2>
+            <div class="about-content">
+                <h3>My Story, My Journey</h3>
+                <p>Hi! I'm Steven, a college student who enjoys learning new things, spending time with friends, and
+                    creating meaningful memories.</p>
+                <p>I believe that every experience teaches us something valuable. My journey is about growing as a
+                    person, discovering my interests, and working toward my dreams.</p>
+                <p>This blog is where I express myself and share little moments from my everyday life.</p>
+                <div class="about-facts">
+                    <p><strong>Name:</strong> Steven</p>
+                    <p><strong>Occupation:</strong> College Student</p>
+                    <p><strong>Interests:</strong> Gaming, Music, Friends</p>
+                    <p><strong>Goal:</strong> To become successful</p>
+                </div>
+            </div>
+
+            <div class="video-ring" id="videoRing" aria-label="ROS Highlights video ring. Drag to spin.">
+                <div class="vr-inner" id="vrInner">
+                    <div class="vr-card" style="--index: 0;"><video src="videos/1.mp4" muted loop playsinline autoplay
+                            preload="metadata"></video></div>
+                    <div class="vr-card" style="--index: 1;"><video src="videos/2.mp4" muted loop playsinline autoplay
+                            preload="metadata"></video></div>
+                    <div class="vr-card" style="--index: 2;"><video src="videos/3.mp4" muted loop playsinline autoplay
+                            preload="metadata"></video></div>
+                    <div class="vr-card" style="--index: 3;"><video src="videos/4.mp4" muted loop playsinline autoplay
+                            preload="metadata"></video></div>
+                    <div class="vr-title" id="vrTitle">ROS HIGHLIGHTS</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="friends" class="container section-pad">
+            <div class="section-head">
+                <h2 class="section-title">My friends</h2>
+                <button class="ctrl-btn" data-pause="friendsTrack" aria-pressed="false">Pause</button>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="track" id="friendsTrack">
+                    <article class="card-item"><img src="img/friend.jpg" alt="Friend 1" loading="lazy" />
+                        <p>Always up for a late-night coding session or a spontaneous road trip.</p>
+                    </article>
+                    <article class="card-item"><img src="img/4.jpg" alt="Friend 2" loading="lazy" />
+                        <p>The creative soul who inspires every pixel I push and every idea I explore.</p>
+                    </article>
+                    <article class="card-item"><img src="img/chess.jpg" alt="Friend 3" loading="lazy" />
+                        <p>Chess rival, coffee enthusiast, and the best listener I know.</p>
+                    </article>
+                    <article class="card-item"><img src="img/2.jpg" alt="Friend 4" loading="lazy" />
+                        <p>A true adventurer who never fails to bring laughter to the group.</p>
+                    </article>
+                    <article class="card-item"><img src="img/3.jpg" alt="Friend 5" loading="lazy" />
+                        <p>The one who keeps us grounded and reminds us to enjoy the little things.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="memories" class="container section-pad">
+            <div class="section-head">
+                <h2 class="section-title">Memories</h2>
+                <button class="ctrl-btn" data-pause="memoriesTrack" aria-pressed="false">Pause</button>
+            </div>
+            <p class="hint">Select a photo to view it larger.</p>
+            <div class="carousel-wrapper">
+                <div class="track reverse" id="memoriesTrack">
+                    <figure class="card-item"><img src="img/1.jpg" alt="Memory 1" loading="lazy" />
+                        <figcaption>First trip together, 2023</figcaption>
+                    </figure>
+                    <figure class="card-item"><img src="img/2.jpg" alt="Memory 2" loading="lazy" />
+                        <figcaption>Late-night chess battles</figcaption>
+                    </figure>
+                    <figure class="card-item"><img src="img/3.jpg" alt="Memory 3" loading="lazy" />
+                        <figcaption>Sunset by the lake</figcaption>
+                    </figure>
+                    <figure class="card-item"><img src="img/friend.jpg" alt="Memory 4" loading="lazy" />
+                        <figcaption>Reunion dinner</figcaption>
+                    </figure>
+                    <figure class="card-item"><img src="img/chess.jpg" alt="Memory 5" loading="lazy" />
+                        <figcaption>The final checkmate</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container section-pad">
+            <h2 class="section-title">Contact</h2>
+            <p class="contact-copy">Say hi on Facebook or send me an email.</p>
+            <div class="contact-links">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="button">
+                    <svg class="button-cosm" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="128"
+                        height="128" viewBox="0 0 256 256">
+                        <path
+                            d="M243.07324,157.43945c-1.2334-1.47949-23.18847-27.34619-60.46972-41.05859-1.67579-17.97412-8.25293-34.36328-18.93653-46.87158C149.41309,52.8208,128.78027,44,104,44,54.51074,44,22.10059,88.57715,20.74512,90.4751a3.99987,3.99987,0,0,0,6.50781,4.65234C27.5625,94.6958,58.68359,52,104,52c22.36816,0,40.89648,7.85107,53.584,22.70508,8.915,10.437,14.65625,23.9541,16.65528,38.894A133.54185,133.54185,0,0,0,136,108c-25.10742,0-46.09473,6.48486-60.69434,18.75391-12.65234,10.63379-19.91015,25.39355-19.91015,40.49463a43.61545,43.61545,0,0,0,12.69336,31.21923C76.98438,207.3208,89.40234,212,104,212c23.98047,0,44.37305-9.4668,58.97461-27.37744,12.74512-15.6333,20.05566-37.145,20.05566-59.01953,0-.1128-.001-.22559-.001-.33838,33.62988,13.48486,53.62207,36.96631,53.89746,37.2959a4.00015,4.00015,0,0,0,6.14648-5.1211ZM104,204c-27.89746,0-40.60449-19.05078-40.60449-36.75146C63.39551,142.56592,86.11621,116,136,116a124.37834,124.37834,0,0,1,38.97266,6.32617q.05712,1.63038.05761,3.27686C175.03027,177.07129,139.29785,204,104,204Z">
+                        </path>
+                    </svg>
+                    <svg class="highlight" aria-hidden="true" viewBox="0 0 144.75738 77.18431"
+                        preserveAspectRatio="none">
+                        <g transform="translate(-171.52826,-126.11624)">
+                            <g fill="none" stroke-width="17" stroke-linecap="round" stroke-miterlimit="10">
+                                <path
+                                    d="M180.02826,169.45123c0,0 12.65228,-25.55115 24.2441,-25.66863c6.39271,-0.06479 -5.89143,46.12943 4.90937,50.63857c10.22345,4.2681 24.14292,-52.38336 37.86455,-59.80493c3.31715,-1.79413 -5.35094,45.88889 -0.78872,58.34589c5.19371,14.18125 33.36934,-58.38221 36.43049,-56.91633c4.67078,2.23667 -0.06338,44.42744 5.22574,47.53647c6.04041,3.55065 19.87185,-20.77286 19.87185,-20.77286">
+                                </path>
+                            </g>
+                        </g>
+                    </svg>
+                    <i class="fab fa-facebook" aria-hidden="true"></i>Facebook</a>
+                <a href="mailto:hello@emerald.blog" class="social-btn"><i class="fas fa-envelope"
+                        aria-hidden="true"></i> Email me</a>
+                <button type="button" class="social-btn" id="copyEmail"><i class="fas fa-copy" aria-hidden="true"></i>
+                    <span>Copy email</span></button>
+            </div>
+            <svg height="0" width="0" aria-hidden="true" style="position:absolute">
+                <filter id="handDrawnNoise">
+                    <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" type="fractalNoise"></feTurbulence>
+                    <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="3" in2="noise"
+                        in="SourceGraphic"></feDisplacementMap>
+                </filter>
+                <filter id="handDrawnNoise2">
+                    <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" seed="1010" type="fractalNoise">
+                    </feTurbulence>
+                    <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="3" in2="noise"
+                        in="SourceGraphic"></feDisplacementMap>
+                </filter>
+                <filter id="handDrawnNoiset">
+                    <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" type="fractalNoise"></feTurbulence>
+                    <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="6" in2="noise"
+                        in="SourceGraphic"></feDisplacementMap>
+                </filter>
+                <filter id="handDrawnNoiset2">
+                    <feTurbulence result="noise" numOctaves="8" baseFrequency="0.1" seed="1010" type="fractalNoise">
+                    </feTurbulence>
+                    <feDisplacementMap yChannelSelector="G" xChannelSelector="R" scale="6" in2="noise"
+                        in="SourceGraphic"></feDisplacementMap>
+                </filter>
+            </svg>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>&copy; <span id="year">2026</span> Steven Andrew G. Flores. Built with curiosity and a lot of color.</p>
+            <a href="#home">Back to top</a>
+        </div>
+    </footer>
+
+    <dialog id="lightbox" aria-label="Photo viewer">
+        <img src="" alt="" />
+        <p></p>
+        <button class="ctrl-btn" id="lbClose" autofocus>Close</button>
+    </dialog>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
